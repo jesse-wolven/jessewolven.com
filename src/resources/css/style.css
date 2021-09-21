@@ -1,0 +1,1450 @@
+/*
+Standard Light Gray Background Color: #555555
+Darker Gray Background Color: #383838
+Spotify Green: #1db954
+Spotify Black: #191414
+Light Blue: #1db7b9
+Transparent White: rgba(255, 255, 255, 0.5)
+
+*/
+
+/* ================================================================================= */
+/* ------------------------------- BASIC SETUP ------------------------------------- */
+/* ================================================================================= */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: rgb(55, 55, 55);
+	color: #fff;
+	font-family: 'Noto Sans HK', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	overflow-x: hidden;
+	text-rendering: optimizeLegibility;
+}
+
+.row {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+section {
+	padding: 5vh 0;
+}
+
+header {
+	height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 300;
+	text-transform: uppercase;
+	word-spacing: 4px;
+}
+
+h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 120%;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #fff;
+}
+
+h2 {
+	margin: 7% 0px 0px 0px;
+	font-size: 100%;
+	font-style: italic;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #1db954;
+}
+
+h3 {
+	margin: 10px 0px;
+	font-size: 120%;
+	text-align: center;
+	letter-spacing: 1px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+a:link,
+a:active {
+	color: rgba(255, 255, 255, 0.5);
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #1db954;
+}
+
+.section-heading h2 {
+	position: relative;
+	margin: 0 0;
+	margin-bottom: 5vh;
+	float: center;
+	text-align: center;
+	font-weight: 600;
+	font-size: 300%;
+	color: #1db7b9;
+}
+
+@font-face {
+	font-family: 'Retro Game';
+	src: url(../../vendors/font/PressStart2P-Regular.ttf) format('truetype');
+}
+
+h2.customfont {
+	font-family: 'Retro Game', 'Noto Sans HK', sans-serif;
+}
+
+/* ================================================================================= */
+/* ------------------------------ MAIN NAVIGATION ---------------------------------- */
+/* ================================================================================= */
+
+.main-navi {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	margin: 0px;
+	background-color: rgb(38, 38, 38);
+}
+
+.seperator-wrapper {
+	height: 100vh;
+	width: 1vw;
+	position: fixed;
+}
+
+.seperator {
+	height: inherit;
+	width: inherit;
+	margin-left: 12.75vw;
+	animation: rotate 10s infinite linear;
+	-webkit-animation: rotate 10s infinite linear;
+	z-index: 1000;
+}
+
+@-webkit-keyframes rotate {
+	from {
+		background-position-y: 0;
+	}
+	to {
+		background-position-y: 100vh;
+	}
+}
+
+@keyframes rotate {
+	from {
+		background-position-y: 0;
+	}
+	to {
+		background-position-y: 100vh;
+	}
+}
+
+.gradient {
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right bottom,
+		color-stop(20%, #1db954),
+		color-stop(80%, #1db7b9),
+		color-stop(100%, #1db954)
+	);
+}
+
+/* ---------------------------- NAVIGATION HEADER ----------------------------- */
+
+.profile-head {
+	height: 40vh;
+	margin-bottom: 5vh;
+	background-color: #191414;
+}
+
+.profile-picture-row {
+	margin: 1.5vh 0;
+	height: 28vh;
+}
+
+.profile-photo {
+	display: block;
+	max-width: 90%;
+	max-height: 100%;
+	margin: 0 auto;
+	border: medium solid #1db95400;
+	border-radius: 15px;
+}
+
+.profile-photo:hover {
+	border: medium solid #1db954;
+}
+
+.my-heading-row h1 {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 100%;
+}
+
+.my-heading-row h2 {
+	padding-top: 1vh;
+	margin: 0 auto;
+	font-size: 70%;
+	text-align: center;
+}
+
+/* ---------------------------- PAGE NAVIGATION ----------------------------- */
+
+.nav {
+	display: block;
+	height: 40vh;
+	font-family: 'Noto Sans HK', sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.nav .nav-container {
+	display: inline-block;
+	position: relative;
+	width: 90%;
+	height: 100%;
+	background-color: transparent;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	opacity: 0.999;
+	transition: all 0.5s;
+}
+
+.nav__link h2 {
+	margin: 0 auto;
+	font-size: 80%;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 6.3vh;
+	overflow: hidden;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.about,
+.main-nav {
+	position: relative;
+	height: 7vh;
+}
+
+.main-nav {
+	margin-top: 1.5vh;
+}
+
+.nav__btn:after,
+.about-btn:after {
+	position: absolute;
+	width: 100%;
+	height: 0;
+	padding: 0 2.2px 1.3px 2.2px;
+	left: -1%;
+	z-index: -1;
+	content: '';
+	opacity: 0;
+	overflow: hidden;
+	border-radius: 19px;
+	transition: all 0.5s;
+}
+.nav__btn:after,
+.about-btn:after {
+	top: 100%;
+	transition: all 0.5s;
+	background-image: linear-gradient(transparent, #1db954);
+}
+
+.nav__btn:hover,
+.about-btn:hover {
+	cursor: pointer;
+	color: #fff;
+	border-color: #1db954;
+	transition: all 0.5s;
+}
+
+.nav__btn:hover:after,
+.about-btn:hover:after {
+	top: 5%;
+	height: 100%;
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.main-nav:hover,
+.about:hover {
+	border-color: #1db954;
+}
+
+.about a,
+.skills a,
+.music a,
+.photography a,
+.contact a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+.main-nav a:link,
+.main-nav a:visited,
+.about a:link,
+.about a:visited {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
+.main-nav a:active,
+.main-nav a:hover,
+.about a:active,
+.about a:hover,
+.nav__link h2:active,
+.nav__link h2:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------------------------- SOCIAL LINKS ----------------------------- */
+
+.social-media {
+	display: block;
+	max-height: 15vh;
+	padding: 0px;
+	margin: 6vh 5% auto 5%;
+	font-size: 160%;
+	text-align: center;
+}
+
+.social-link {
+	margin-right: auto;
+}
+
+.social-link-circular a {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+}
+
+.social-link-circular svg,
+.social-link svg {
+	margin: 0;
+	line-height: 0;
+	vertical-align: 0.125em;
+}
+
+.social-link a {
+	display: inline-block;
+	width: 0.875em;
+	height: 1em;
+}
+
+.social-link a:link,
+.social-link a:visited,
+.social-link-circular a:link,
+.social-link-circular a:visited {
+	text-decoration: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.3);
+	transition: color 0.2s;
+}
+
+.icon-linkedin,
+.icon-instagram,
+.icon-spotify,
+.icon-github {
+	transition: color 0.2s;
+	margin-left: 12px;
+}
+
+.icon-linkedin:hover {
+	color: #007bb5;
+}
+
+.icon-spotify:hover {
+	color: #1db954;
+}
+
+.icon-github:hover {
+	color: #fff;
+}
+
+.icon-instagram:hover {
+	color: #fff;
+	background: radial-gradient(
+			circle farthest-corner at 35% 90%,
+			#fec564,
+			transparent 50%
+		),
+		radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+		radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+		radial-gradient(
+			ellipse farthest-corner at 20% -50%,
+			#5258cf,
+			transparent 50%
+		),
+		radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+		radial-gradient(
+			ellipse farthest-corner at 60% -20%,
+			#893dc2,
+			transparent 50%
+		),
+		radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+		linear-gradient(
+			#6559ca,
+			#bc318f 30%,
+			#e33f5f 50%,
+			#f77638 70%,
+			#fec66d 100%
+		);
+	border-radius: 20%;
+}
+
+/* -------------------------- Mobile Navigation -------------------------- */
+
+.mobile-nav-icon {
+	display: none;
+}
+
+.mobile-nav {
+	display: none;
+}
+
+.btn-close-mobile-nav-small {
+	display: none;
+}
+
+.mobile-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 98;
+	background-color: transparent;
+}
+/* ================================================================================= */
+/* ---------------------------------- HEADER PAGE ---------------------------------- */
+/* ================================================================================= */
+
+.quote-text {
+	height: 100vh;
+	width: 86.09%;
+	margin: 0;
+	padding: 0;
+	float: right;
+	background-image: linear-gradient(
+			rgba(38, 49, 255, 0.225),
+			rgba(176, 184, 255, 0.536)
+		),
+		url(../img/headerPhotos/chipinqueMtnsAboveClouds.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.quote-text-1,
+.quote-text-2,
+.quote-text-3 {
+	max-width: 100%;
+	max-height: 30vh;
+	margin-right: 0;
+}
+
+.quote-text-1 {
+	margin-top: 10vh;
+}
+
+.quote-text-2 {
+	margin-top: 7vh;
+	margin-bottom: 7vh;
+}
+
+.quote-text-3 {
+	margin-bottom: 4vh;
+}
+
+.quote-text h1,
+.quote-text h2,
+.quote-text h3 {
+	margin: 0 1.5vw;
+	font-weight: 400;
+	font-size: 180%;
+	float: right;
+	text-align: center;
+	text-transform: none;
+	word-spacing: 4px;
+	letter-spacing: 1px;
+	color: #191414;
+}
+
+.citation {
+	max-height: 30vh;
+	width: 100%;
+}
+
+.quote-citation {
+	font-size: 100%;
+	font-weight: 200;
+	text-transform: none;
+	margin: 0 auto;
+	text-align: center;
+	float: right;
+	word-spacing: 4px;
+	color: #191414;
+}
+
+/* ================================================================================= */
+/* ------------------------------- ABOUT ME PAGE ----------------------------------- */
+/* ================================================================================= */
+
+.section-about {
+	width: 86.09%;
+	height: 100vh;
+	float: right;
+	background-image: url(../img/backgroundImgs/Music-background.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.about-row {
+	margin: 0 auto 5vh auto;
+	max-width: 100%;
+}
+
+.about-row .col {
+	margin-top: 0;
+}
+
+.AboutMePara {
+	margin-right: 3vh;
+	padding: 1vh 1vw;
+	text-align: left;
+	font-family: 'Noto Sans HK', sans-serif;
+	font-size: 110%;
+	font-weight: 300;
+	background-color: rgba(22, 22, 22, 0.5);
+	border-radius: 15px;
+}
+
+.about-me-photo {
+	margin: 0;
+	max-height: 60vh;
+	max-width: 100%;
+	border-radius: 15px;
+	float: right;
+	border: solid medium rgba(255, 255, 255, 0.5);
+}
+
+/* ------------------------- Vertical About Me Page --------------------------- */
+.about-me-row {
+	display: none;
+}
+
+.about-me-img-row {
+	display: none;
+}
+
+/* ================================================================================= */
+/* ------------------------------- SKILLS PAGE ------------------------------------- */
+/* ================================================================================= */
+
+.section-skills {
+	width: 86.09%;
+	height: 100vh;
+	float: right;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(60, 59, 59, 0.536)),
+		url(../img/backgroundImgs/20200807194506_IMG_0383.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+.skills-row {
+	max-width: 100%;
+	margin: 0vh auto 3vh auto;
+}
+
+.skills-col-1,
+.skills-col-2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.skills-para-row {
+	padding: 1vh 0.5vw;
+	margin-right: 1.6%;
+	text-align: left;
+	font-size: 110%;
+	font-weight: 300;
+	font-family: 'Noto Sans HK', sans-serif;
+	border-radius: 15px;
+	background-color: rgba(22, 22, 22, 0.5);
+}
+
+.skills-graph {
+	max-width: 100%;
+	max-height: 100%;
+	padding: 1vh 0.5vw;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 15px;
+	background-color: rgba(22, 22, 22, 0.5);
+}
+
+.bepco-row {
+	margin-top: 2vh;
+	padding: 1vh 0.5vw;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 15px;
+	background-color: rgba(22, 22, 22, 0.5);
+}
+
+.bepco-description {
+	font-size: 110%;
+	font-weight: 300;
+}
+
+.bepco-logo {
+	max-height: 40%;
+	max-width: 40%;
+	border-radius: 7px;
+}
+
+.bepco-list li {
+	margin-left: 1.5vw;
+}
+
+.date {
+	margin-bottom: 1vh;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* 
+Unemployment Graphic, if desired.
+.unemployment-row {
+	padding: 1% 0 1% 1%;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 15px;
+	background-color: rgba(22, 22, 22, 0.5);
+}
+
+.unemployment-row h3 {
+	margin: 0;
+	text-align: left;
+	font-weight: 500;
+	color: #1db954;
+} */
+
+/* ------------------------- Vertical Skills Page ----------------------------- */
+.skills-row-small {
+	display: none;
+}
+
+/* --------------------- Timeline Modal Window & Button ----------------------- */
+
+.timeline-row {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.animate__animated.animate__heartBeat {
+	--animate-duration: 5s;
+}
+
+.btn--show-modal {
+	display: inline-block;
+	position: relative;
+	padding: 1% 5%;
+	font-size: 110%;
+	font-weight: 500;
+	font-family: 'Noto Sans HK', sans-serif;
+	background-color: transparent;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	color: rgba(255, 255, 255, 0.5);
+	opacity: 0.999;
+	transition: all 0.5s;
+}
+
+.btn--show-modal:after {
+	position: absolute;
+	left: -1%;
+	width: 100%;
+	height: 0;
+	padding: 0 2.2px 1.3px 2.2px;
+	content: '';
+	border-radius: 19px;
+	z-index: -1;
+	opacity: 0;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+.btn--show-modal:after {
+	top: 100%;
+	background-image: linear-gradient(transparent, #1db954);
+	transition: all 0.5s;
+}
+
+.btn--show-modal:hover {
+	cursor: pointer;
+	border-color: #1db954;
+	color: #fff;
+	transition: all 0.5s;
+}
+
+.btn--show-modal:hover:after {
+	top: 5%;
+	height: 100%;
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.hidden {
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 60%;
+	width: 60%;
+	height: auto;
+	padding: 5rem 3rem;
+	border-radius: 20px;
+	background-color: #191414;
+	box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	transition: all 0.15s;
+}
+
+.modal h3 {
+	margin-bottom: 2vh;
+	font-weight: 500;
+	color: #1db954;
+}
+
+.modal img {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto 8% auto;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	z-index: 100;
+	transition: all 0.15s;
+}
+
+.btn--close-modal {
+	position: absolute;
+	top: 0.5rem;
+	right: 2rem;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 3rem;
+	border: none;
+	background: none;
+	color: inherit;
+}
+
+.btn--close-modal:hover {
+	color: #1db954;
+	transition: all 0.1s;
+}
+
+/* ================================================================================= */
+/* -------------------------------- MUSIC PAGE ------------------------------------- */
+/* ================================================================================= */
+
+.section-music {
+	width: 86.09%;
+	height: 100vh;
+	float: right;
+	background-image: url(../img/backgroundImgs/AboutMe2.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.music-para-row {
+	max-width: 60vw;
+	margin-top: 0;
+	text-align: center;
+	font-family: 'Noto Sans HK', sans-serif;
+	font-size: 110%;
+	font-weight: 300;
+}
+
+/* --------------------------- Time Frame Selectors ---------------------------------------- */
+
+.time-frame {
+	font-size: 110%;
+	font-weight: 500;
+}
+
+.time-frame-row {
+	margin-top: 10vh;
+}
+
+/* 
+Draw Line across the bottom of the timeframe button:
+---------------------------------------------------
+
+.time-frame-1 {
+	background-color: transparent;
+	flex: 1 1 auto;
+	color: rgba(255, 255, 255, 0.5);
+	margin: 0;
+	padding: 1% 3%;
+	border: 2px solid #f7f7f7;
+	border: none;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	transition: 0.3s;
+}
+
+.time-frame-1:after {
+	position: absolute;
+	transition: 0.3s;
+	content: '';
+	width: 0;
+	left: 50%;
+	bottom: 0;
+	height: 3px;
+	background: #1db954;
+}
+.time-frame-1:after {
+	left: 0;
+}
+.time-frame-1:hover {
+	cursor: pointer;
+	color: #fff;
+}
+.time-frame-1:hover:after {
+	width: 100%;
+	left: 0;
+} */
+
+.time-frame-1,
+.time-frame-2,
+.time-frame-3 {
+	padding: 1% 2%;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-bottom: solid medium rgba(255, 255, 255, 0.5);
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.time-frame-1:hover {
+	color: rgba(255, 255, 255, 0.8);
+	border-color: #1db954;
+}
+
+.time-frame-2 {
+	margin: 0 5vw;
+}
+
+.time-frame-2:hover {
+	color: rgba(255, 255, 255, 0.8);
+	border-color: #1db954;
+}
+
+.time-frame-3:hover {
+	color: rgba(255, 255, 255, 0.8);
+	border-color: #1db954;
+}
+
+.time-frame-active {
+	color: rgba(255, 255, 255, 0.8);
+	border-color: #1db954;
+	transform: translateY(-30%);
+}
+
+/* ----------------------------- Connect to Spotify API Button ------------------------------------ */
+
+.btn-spotify-api {
+	position: relative;
+	display: inline-block;
+	margin-top: 10vh;
+	padding: 1% 5%;
+	font-family: 'Noto Sans HK', sans-serif;
+	font-size: 150%;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+	background-color: transparent;
+	opacity: 0.999;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	transition: all 0.5s;
+}
+
+.btn-spotify-api:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0;
+	padding: 0 1px 1px 1px;
+	border-radius: 20px;
+	content: '';
+	opacity: 0;
+	overflow: hidden;
+	z-index: -1;
+	transition: all 0.5s;
+}
+
+.btn-spotify-api:after {
+	top: 100%;
+	background-image: linear-gradient(transparent, #1db954);
+	transition: all 0.5s;
+}
+
+.btn-spotify-api:hover {
+	cursor: pointer;
+	color: #fff;
+	border-color: #1db954;
+	transition: all 0.5s;
+}
+
+.btn-spotify-api:hover:after {
+	top: 5%;
+	height: 100%;
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+/* ----------------------------- Spotify API Data Display --------------------------------------- */
+.smaller-screen {
+	display: none;
+}
+
+.music-row {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+.artist-header {
+	margin-top: 0.5vh;
+}
+
+.artist-header p {
+	font-weight: 420;
+}
+
+.track-header {
+	margin-top: 0.5vh;
+}
+
+.track-header p {
+	font-weight: 420;
+}
+
+.artist-row-link p {
+	color: #fff;
+}
+
+.artist-row-link:hover,
+.artist-row-link:hover .artist-rating-col h2,
+.artist-row-link:hover .artist-name-col p {
+	color: #1db954;
+	border-color: #1db954;
+}
+
+.top-artists-col {
+	margin: 0 2% 1% 0;
+	padding: 0 1vw 1vh 1vw;
+	width: 46%;
+	background-color: #191414;
+	border-radius: 20px;
+}
+
+.top-artists-col p {
+	text-align: center;
+	font-size: 110%;
+}
+
+.top-tracks-col {
+	margin: 0 0 1% 2%;
+	padding: 0 1vw 1vh 1vw;
+	float: right;
+	width: 46%;
+	border-radius: 20px;
+	background-color: #191414;
+}
+
+.top-tracks-col p {
+	text-align: center;
+	font-size: 110%;
+}
+
+.artists-row {
+	margin-top: 4%;
+	max-height: 70vh;
+	padding-right: 1.5vw;
+	overflow: auto;
+}
+
+.artist-row {
+	margin-bottom: 1vh;
+	padding: 1vh 0;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	background-color: #191414;
+}
+
+.artist-row:hover {
+	border-color: #1db954;
+}
+
+.tracks-row {
+	max-height: 70vh;
+	margin-top: 4%;
+	padding-right: 1.5vw;
+	overflow: auto;
+}
+
+.track-row {
+	margin-bottom: 1vh;
+	padding: 1vh 0;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	background-color: #191414;
+}
+
+.track-row:hover {
+	border-color: #1db954;
+}
+
+.artist-rating-col {
+	margin-top: 4%;
+}
+
+.artist-rating-col h2 {
+	font-weight: 500;
+	font-size: 200%;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.artist-pic-col {
+	max-height: 99px;
+	max-width: 99px;
+	margin: 0 1vw 0 1%;
+}
+
+.artist-pic-col img {
+	height: 100%;
+	width: auto;
+	max-width: 99px;
+	max-height: 99px;
+}
+
+.artist-name-col {
+	margin: 7% 0 0 0;
+}
+
+.artist-name-col p {
+	text-align: left;
+	font-size: 110%;
+}
+
+.track-rating-col {
+	margin: 4% 0 0 0;
+}
+
+.track-rating-col h2 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 200%;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.albulm-art-col {
+	max-height: 99px;
+	max-width: 99px;
+	margin: 0 1vw 0 1%;
+}
+
+.albulm-art-col img {
+	height: 100%;
+	width: auto;
+	max-width: 99px;
+	max-height: 99px;
+}
+
+.track-info-col {
+	margin: 5% 0 0 0;
+}
+
+.track-name-row p {
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 140%;
+	color: #fff;
+	overflow: hidden;
+}
+
+.track-row:hover .track-name-row p,
+.track-row:hover .track-rating-col h2,
+.track-row:hover .artist-name-row p,
+.track-row:hover {
+	color: #1db954;
+	cursor: pointer;
+}
+
+.artist-name-row {
+	margin-top: 2px;
+}
+
+.artist-name-row p {
+	text-align: left;
+	font-style: italic;
+	font-size: 100%;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+/* ================================================================================= */
+/* ---------------------------- PHOTOGRAPHY PAGE ----------------------------------- */
+/* ================================================================================= */
+
+.section-photography {
+	width: 86.09%;
+	height: 100vh;
+	float: right;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(60, 59, 59, 0.536)),
+		url(../img/backgroundImgs/20200521191648_IMG_0283.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+.photo-row-background {
+	max-width: 77.09%;
+	max-height: 70vh;
+	margin-bottom: 1vh;
+	padding: 2vh 1vw 2vh 2vw;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+}
+
+.photograph-grid {
+	max-width: 100%;
+	max-height: 65vh;
+	padding-right: 2vw;
+	overflow: auto;
+}
+
+.simplebar-scrollbar::before {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.photo-col-1 img,
+.photo-col-2 img,
+.photo-col-3 img,
+.photo-col-4 img,
+.photo-col-5 img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 15px;
+}
+
+.copy-right-notice {
+	max-width: 77.09%;
+	margin: 4px auto;
+	text-align: center;
+	font-style: italic;
+	font-size: small;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+/* -------------------- PHOTOGRAPHY MODAL WINDOW -------------------- */
+
+.photoBtn--show-modal {
+	cursor: pointer;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.photoBtn--show-modal:hover {
+	border-color: #1db954;
+}
+
+.photoModal {
+	max-height: 100vh;
+	max-width: 100vw;
+}
+
+.highQualityPic {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-height: 65vh;
+	max-width: 72vw;
+	z-index: 1000;
+}
+
+.photoOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	z-index: 100;
+}
+
+.photoBtn--close-modal {
+	position: fixed;
+	top: 5vh;
+	right: 5vw;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 3rem;
+	color: #fff;
+	border: none;
+	background: none;
+	z-index: 1000;
+}
+
+.photoBtn--close-modal:hover {
+	color: #1db954;
+}
+
+.photoScroller {
+	position: fixed;
+	top: 88%;
+	left: 50%;
+	padding-bottom: 0vh;
+	max-width: 75vw;
+	max-height: 21vh;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	z-index: 1000;
+	transform: translate(-50%, -50%);
+}
+
+.ModalImgs {
+	display: inline-block;
+	max-height: 17vh;
+	padding-bottom: 0;
+	border-radius: 15px;
+	z-index: 1000;
+}
+
+.slider__btn {
+	position: fixed;
+	top: 40%;
+	height: 3.5rem;
+	width: 3.5rem;
+	cursor: pointer;
+	font-size: 2.25rem;
+	font-family: inherit;
+	color: #191414;
+	background: #fff;
+	border: none;
+	border-radius: 50%;
+	z-index: 1000;
+}
+
+.slider__btn:hover {
+	background-color: #1db954;
+	color: #fff;
+}
+
+.slider__btn--left {
+	left: 6%;
+	transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+	right: 6%;
+	transform: translate(50%, -50%);
+}
+
+/* ================================================================================= */
+/* ------------------------------- CONTACT ME PAGE --------------------------------- */
+/* ================================================================================= */
+
+.section-contact {
+	width: 86.09%;
+	height: 100vh;
+	float: right;
+}
+
+.contact-row {
+	margin: 0 4vw 0 4vw;
+}
+
+.contact-row .col {
+	margin-top: 0;
+}
+
+.contact-me-para {
+	max-width: 90%;
+	margin-bottom: 2vh;
+	font-weight: 300;
+	font-size: 110%;
+}
+
+.contact-form {
+	max-width: 90%;
+}
+
+input,
+textarea {
+	margin: 1vh 0;
+	width: 100%;
+	background-color: rgb(38, 38, 38);
+	color: #fff;
+	border: solid medium rgba(255, 255, 255, 0);
+	padding: 2%;
+	vertical-align: middle;
+	font-size: 70%;
+	line-height: 20px;
+	font-weight: 200;
+	border-radius: 15px;
+}
+
+/* Disable the autofill input background color change */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-transition: background-color 5000s ease-in-out 0s;
+	transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: #fff !important;
+}
+
+textarea {
+	min-width: 90%;
+	max-width: 100%;
+	max-height: 15vh;
+}
+
+input:focus,
+textarea:focus {
+	border: solid medium #1db954;
+	outline: none;
+}
+
+.error {
+	padding: 0;
+	font-size: 70%;
+	font-weight: 200;
+	color: red;
+}
+
+.success-row {
+	max-width: 90%;
+	margin: 1vh auto auto 0;
+	text-align: center;
+}
+
+.success {
+	font-size: 70%;
+	font-weight: 200;
+	color: #1db954;
+}
+
+.form-button {
+	max-width: 90%;
+	margin: 2vh auto auto 0;
+	text-align: center;
+}
+
+.form-message {
+	display: inline-block;
+	position: relative;
+	padding: 2% 5%;
+	font-size: 110%;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+	background-color: #1db95400;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	opacity: 0.999;
+	transition: all 0.5s;
+}
+
+.form-message:after {
+	position: absolute;
+	left: -1%;
+	width: 100%;
+	height: 0;
+	padding: 0 2.2px 1.3px 2.2px;
+	content: '';
+	border-radius: 19px;
+	opacity: 0;
+	overflow: hidden;
+	z-index: -1;
+	transition: all 0.5s;
+}
+
+.form-message:after {
+	top: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0), #1db954);
+	transition: all 0.5s;
+}
+
+.form-message:hover {
+	cursor: pointer;
+	color: #fff;
+	border-color: #1db954;
+	transition: all 0.5s;
+}
+
+.form-message:hover:after {
+	top: 5%;
+	height: 100%;
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.googleMapsImg {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0;
+	border: solid medium rgba(255, 255, 255, 0.5);
+	border-radius: 15px;
+}
+
+/* ------------------------- Vertical Contact Page ---------------------------- */
+
+.contact-row-vertical {
+	display: none;
+}

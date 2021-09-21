@@ -1,0 +1,12 @@
+node_modules
+dist
+.parcel-cache
+.htaccess
+.prettierrc
+favicon.ico
+index.html
+index.php
+JesseWolvenWebsite.zip
+myWebsite.zip
+src/resources/img
+src/resources/php

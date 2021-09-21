@@ -1,0 +1,24 @@
+{
+	"name": "jessewolven",
+	"version": "1.0.0",
+	"description": "Personal website",
+	"default": "index.html",
+	"scripts": {
+		"start": "parcel index.html",
+		"build": "parcel build index.html --dist-dir ./dist"
+	},
+	"author": "Jesse Wolven",
+	"license": "ISC",
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.15.4",
+		"animate.css": "^4.1.1",
+		"crypto-js": "^4.1.1",
+		"normalize.css": "^8.0.1",
+		"simplebar": "^5.3.5",
+		"waypoints": "^4.0.1"
+	},
+	"devDependencies": {
+		"@parcel/transformer-image": "^2.0.0-rc.0",
+		"parcel": "^2.0.0-rc.0"
+	}
+}
