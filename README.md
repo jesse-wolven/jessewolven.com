@@ -1,7 +1,8 @@
 # Jesse Wolven's Website
 
-A cross between a personal website and a developer profile
-One page sectional website developed with HTML, CSS, JS, & PHP using a MVC architecture for added security and more maintainable code.
+A cross between a personal website and a developer profile.
+
+A one page sectional website developed with HTML, CSS, JS, & PHP using a MVC architecture for added security and more maintainable code.
 
 Currently contains:
 
